@@ -1,0 +1,196 @@
+{
+  "blueprint": {
+    "components": [
+      {
+        "id": "component-1778507983133-5378-2",
+        "displayName": "API Gateway",
+        "type": "APIManagement.PaaS.APIGateway",
+        "version": "1.0",
+        "description": "APIGateway service",
+        "dependencies": [],
+        "links": [
+          {
+            "componentId": "component-1778507925550-9632-1-group-1",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1778507925550-9632-1",
+        "displayName": "Container Platform",
+        "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+        "version": "1.0",
+        "description": "Container Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "component-1778507925550-9632-1-group-0",
+        "displayName": "Service Mesh security",
+        "type": "Security.CaaS.ServiceMeshSecurity",
+        "version": "1.0",
+        "description": "Service Mesh security component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1778507925550-9632-1"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1778507925550-9632-1-group-1",
+        "displayName": "Custom Workload",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Custom Workload component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1778507925550-9632-1"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "component-1778508237241-3923-6",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "component-1778508223361-2414-5-group-0",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "component-1778508204873-4944-4-group-0",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1778507925550-9632-1-group-2",
+        "displayName": "Observability Logging",
+        "type": "Observability.CaaS.Logging",
+        "version": "1.0",
+        "description": "Observability Logging component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1778507925550-9632-1"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1778507925550-9632-1-group-3",
+        "displayName": "Observability Monitoring",
+        "type": "Observability.CaaS.Monitoring",
+        "version": "1.0",
+        "description": "Observability Monitoring component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1778507925550-9632-1"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1778507925550-9632-1-group-4",
+        "displayName": "Observability Tracing",
+        "type": "Observability.CaaS.Tracing",
+        "version": "1.0",
+        "description": "Observability Tracing component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1778507925550-9632-1"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1778508204873-4944-4",
+        "displayName": "Key-Value DBMS Platform",
+        "type": "Storage.PaaS.KeyValueDbms",
+        "version": "1.0",
+        "description": "Key-Value DBMS Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "component-1778508204873-4944-4-group-0",
+        "displayName": "Key-Value Entities",
+        "type": "Storage.PaaS.KeyValueEntity",
+        "version": "1.0",
+        "description": "Key-Value Entities component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.KeyValueDbms",
+            "id": "component-1778508204873-4944-4"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1778508223361-2414-5",
+        "displayName": "Relational DBMS Platform",
+        "type": "Storage.PaaS.RelationalDbms",
+        "version": "1.0",
+        "description": "Relational DBMS Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "component-1778508223361-2414-5-group-0",
+        "displayName": "Relational Database",
+        "type": "Storage.PaaS.RelationalDatabase",
+        "version": "1.0",
+        "description": "Relational Database component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.RelationalDbms",
+            "id": "component-1778508223361-2414-5"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1778508237241-3923-6",
+        "displayName": "File & Blob Storage",
+        "type": "Storage.PaaS.FilesAndBlobs",
+        "version": "1.0",
+        "description": "FilesAndBlobs service",
+        "dependencies": [],
+        "links": []
+      }
+    ]
+  },
+  "canvasLayout": {
+    "nodes": [
+      {
+        "componentId": "component-1778507983133-5378-2",
+        "x": 182,
+        "y": 286
+      },
+      {
+        "componentId": "component-1778507925550-9632-1",
+        "x": 650,
+        "y": 100
+      },
+      {
+        "componentId": "component-1778508204873-4944-4",
+        "x": 1240,
+        "y": 185
+      },
+      {
+        "componentId": "component-1778508223361-2414-5",
+        "x": 1236,
+        "y": 448
+      },
+      {
+        "componentId": "component-1778508237241-3923-6",
+        "x": 1262,
+        "y": 42
+      }
+    ]
+  }
+}
