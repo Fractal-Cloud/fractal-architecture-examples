@@ -1,6 +1,6 @@
 # Fractal Architecture Examples
 
-Repository of **Fractal** blueprints for **Fractal Cloud**: reusable infrastructure templates you import and deploy as a unit.
+Repository of **Fractal** for **Fractal Cloud**: reusable infrastructure templates you import and deploy as a unit.
 
 Each example is a JSON file (`fractal-*.json`) with components, dependencies, and links. Import it in Fractal Cloud, then request a deployment from your catalog.
 
@@ -39,8 +39,8 @@ examples/
 
 1. Open the example folder and read `README.md`.
 2. Import the `fractal-*.json` file into Fractal Cloud.
-3. Deploy through your platform catalog.
+3. Deploy.
 
 ## About Fractals
 
-A **Fractal** is a versioned infrastructure template. The blueprint lists components (gateway, runtime, databases, messaging, and so on) with explicit dependencies. Platform teams publish Fractals to a catalog; product teams pick one and deploy the linked stack.
+A **Fractal** is a versioned infrastructure template. The blueprint lists components (gateway, runtime, databases, messaging, and so on). Platform teams publish Fractals to a catalog; product teams pick one and deploy the linked stack.
