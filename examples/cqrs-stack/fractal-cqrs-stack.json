@@ -1,0 +1,357 @@
+{
+  "blueprint": {
+    "components": [
+      {
+        "id": "component-1780568340356-6085-1",
+        "displayName": "API Gateway",
+        "type": "APIManagement.PaaS.APIGateway",
+        "version": "1.0",
+        "description": "APIGateway service",
+        "dependencies": [],
+        "links": [
+          {
+            "componentId": "card-1780568580906-jsm200kjx",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780568588840-i4gz5hp6a",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1780568537756-9434-2",
+        "displayName": "Container Platform",
+        "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+        "version": "1.0",
+        "description": "Container Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "card-1780568580906-jsm200kjx",
+        "displayName": "Command Service",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Command Service component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780568537756-9434-2"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780568589494-zfhym5t4j",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "card-1780568588840-i4gz5hp6a",
+        "displayName": "Query Service",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Query Service component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780568537756-9434-2"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780568608930-ldj1dzcky",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780568750910-ndcovirrn",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780568766165-d6j09l2dm",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "card-1780568589494-zfhym5t4j",
+        "displayName": "Domain Model",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Domain Model component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780568537756-9434-2"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780569066414-01m888etd",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780568741060-3avpd7obi",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "card-1780568590075-c9c4twxla",
+        "displayName": "Outbox Relay",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Outbox Relay component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780568537756-9434-2"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780568679902-lsyqssr58",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780569066414-01m888etd",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "card-1780568590713-bp53se67i",
+        "displayName": "Projector",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Projector component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780568537756-9434-2"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780568679902-lsyqssr58",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780568750910-ndcovirrn",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780568766165-d6j09l2dm",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "card-1780568591310-0tcfsws2m",
+        "displayName": "Reprocessor",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Reprocessor component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780568537756-9434-2"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780568679902-lsyqssr58",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780568680195-4x5hbqsm7",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "card-1780568604451-eh8mn828x",
+        "displayName": "Search Platform",
+        "type": "Storage.CaaS.Search",
+        "version": "1.0",
+        "description": "Search Platform component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780568537756-9434-2"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "card-1780568608930-ldj1dzcky",
+        "displayName": "Search Index",
+        "type": "Storage.CaaS.SearchEntity",
+        "version": "1.0",
+        "description": "Search Index component",
+        "dependencies": [
+          {
+            "type": "Storage.CaaS.Search",
+            "id": "card-1780568604451-eh8mn828x"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780568671107-2911-3",
+        "displayName": "Messaging Platform",
+        "type": "Messaging.PaaS.Broker",
+        "version": "1.0",
+        "description": "Messaging Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "card-1780568679902-lsyqssr58",
+        "displayName": "Event Topic",
+        "type": "Messaging.PaaS.Entity",
+        "version": "1.0",
+        "description": "Event Topic component",
+        "dependencies": [
+          {
+            "type": "Messaging.PaaS.Broker",
+            "id": "component-1780568671107-2911-3"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "card-1780568680195-4x5hbqsm7",
+        "displayName": "Dead Letter Topic",
+        "type": "Messaging.PaaS.Entity",
+        "version": "1.0",
+        "description": "Dead Letter Topic component",
+        "dependencies": [
+          {
+            "type": "Messaging.PaaS.Broker",
+            "id": "component-1780568671107-2911-3"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "card-1780569066414-01m888etd",
+        "displayName": "Outbox Entity",
+        "type": "Messaging.PaaS.Entity",
+        "version": "1.0",
+        "description": "Outbox Entity component",
+        "dependencies": [
+          {
+            "type": "Messaging.PaaS.Broker",
+            "id": "component-1780568671107-2911-3"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780568738783-2770-4",
+        "displayName": "Relational DBMS Platform",
+        "type": "Storage.PaaS.RelationalDbms",
+        "version": "1.0",
+        "description": "Relational DBMS Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "card-1780568741060-3avpd7obi",
+        "displayName": "Write Database",
+        "type": "Storage.PaaS.RelationalDatabase",
+        "version": "1.0",
+        "description": "Write Database component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.RelationalDbms",
+            "id": "component-1780568738783-2770-4"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780568748603-9744-5",
+        "displayName": "Document DBMS Platform",
+        "type": "Storage.PaaS.DocumentDbms",
+        "version": "1.0",
+        "description": "Document DBMS Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "card-1780568750910-ndcovirrn",
+        "displayName": "Read Database",
+        "type": "Storage.PaaS.DocumentDatabase",
+        "version": "1.0",
+        "description": "Read Database component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.DocumentDbms",
+            "id": "component-1780568748603-9744-5"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780568763634-8086-6",
+        "displayName": "Key-Value DBMS Platform",
+        "type": "Storage.PaaS.KeyValueDbms",
+        "version": "1.0",
+        "description": "Key-Value DBMS Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "card-1780568766165-d6j09l2dm",
+        "displayName": "Cache",
+        "type": "Storage.PaaS.KeyValueEntity",
+        "version": "1.0",
+        "description": "Cache component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.KeyValueDbms",
+            "id": "component-1780568763634-8086-6"
+          }
+        ],
+        "links": []
+      }
+    ]
+  },
+  "canvasLayout": {
+    "nodes": [
+      {
+        "componentId": "component-1780568340356-6085-1",
+        "x": 637.0411832200299,
+        "y": 225.0373778158641
+      },
+      {
+        "componentId": "component-1780568537756-9434-2",
+        "x": 1120.1328784690234,
+        "y": 81.28135202124682
+      },
+      {
+        "componentId": "component-1780568671107-2911-3",
+        "x": 1883.4298742694943,
+        "y": -93.46661163068168
+      },
+      {
+        "componentId": "component-1780568738783-2770-4",
+        "x": 1885.6569418999911,
+        "y": 282.6223780334268
+      },
+      {
+        "componentId": "component-1780568748603-9744-5",
+        "x": 1885.2101062253878,
+        "y": 477.83726882381677
+      },
+      {
+        "componentId": "component-1780568763634-8086-6",
+        "x": 1884.572915755796,
+        "y": 680.5769119784161
+      }
+    ]
+  }
+}

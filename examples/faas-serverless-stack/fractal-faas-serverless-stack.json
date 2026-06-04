@@ -1,0 +1,164 @@
+{
+  "blueprint": {
+    "components": [
+      {
+        "id": "component-1780561067931-9561-6",
+        "displayName": "API Gateway",
+        "type": "APIManagement.PaaS.APIGateway",
+        "version": "1.0",
+        "description": "APIGateway service",
+        "dependencies": [],
+        "links": [
+          {
+            "componentId": "component-1780561101226-9224-7",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "component-1780561109107-6628-8",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "component-1780561113926-5849-9",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1780561101226-9224-7",
+        "displayName": "Serverless Key-Value",
+        "type": "CustomWorkloads.FaaS.Workload",
+        "version": "1.0",
+        "description": "Workload service",
+        "dependencies": [],
+        "links": [
+          {
+            "componentId": "component-1780561123974-3700-10-group-0",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1780561109107-6628-8",
+        "displayName": "Serverless Storage",
+        "type": "CustomWorkloads.FaaS.Workload",
+        "version": "1.0",
+        "description": "Workload service",
+        "dependencies": [],
+        "links": [
+          {
+            "componentId": "component-1780561135094-8421-11",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1780561113926-5849-9",
+        "displayName": "Serverless Document",
+        "type": "CustomWorkloads.FaaS.Workload",
+        "version": "1.0",
+        "description": "Workload service",
+        "dependencies": [],
+        "links": [
+          {
+            "componentId": "component-1780561144487-9517-12-group-0",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1780561123974-3700-10",
+        "displayName": "Key-Value DBMS Platform",
+        "type": "Storage.PaaS.KeyValueDbms",
+        "version": "1.0",
+        "description": "Key-Value DBMS Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "component-1780561123974-3700-10-group-0",
+        "displayName": "Key-Value Entities",
+        "type": "Storage.PaaS.KeyValueEntity",
+        "version": "1.0",
+        "description": "Key-Value Entities component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.KeyValueDbms",
+            "id": "component-1780561123974-3700-10"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780561135094-8421-11",
+        "displayName": "File & Blob Storage",
+        "type": "Storage.PaaS.FilesAndBlobs",
+        "version": "1.0",
+        "description": "FilesAndBlobs service",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "component-1780561144487-9517-12",
+        "displayName": "Document DBMS Platform",
+        "type": "Storage.PaaS.DocumentDbms",
+        "version": "1.0",
+        "description": "Document DBMS Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "component-1780561144487-9517-12-group-0",
+        "displayName": "Document Database",
+        "type": "Storage.PaaS.DocumentDatabase",
+        "version": "1.0",
+        "description": "Document Database component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.DocumentDbms",
+            "id": "component-1780561144487-9517-12"
+          }
+        ],
+        "links": []
+      }
+    ]
+  },
+  "canvasLayout": {
+    "nodes": [
+      {
+        "componentId": "component-1780561067931-9561-6",
+        "x": 668.9039130476039,
+        "y": 395.3118075238073
+      },
+      {
+        "componentId": "component-1780561101226-9224-7",
+        "x": 1159.9749171950637,
+        "y": 301.4248674967287
+      },
+      {
+        "componentId": "component-1780561109107-6628-8",
+        "x": 1161.4477034125728,
+        "y": 393.14932634650523
+      },
+      {
+        "componentId": "component-1780561113926-5849-9",
+        "x": 1153.154630270245,
+        "y": 490.2255621498118
+      },
+      {
+        "componentId": "component-1780561123974-3700-10",
+        "x": 1619.3638972816968,
+        "y": 134.39105949797002
+      },
+      {
+        "componentId": "component-1780561135094-8421-11",
+        "x": 1671.946460362846,
+        "y": 392.37343230362217
+      },
+      {
+        "componentId": "component-1780561144487-9517-12",
+        "x": 1619.9921971255346,
+        "y": 496.4409275550254
+      }
+    ]
+  }
+}

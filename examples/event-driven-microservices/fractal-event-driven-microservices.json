@@ -1,0 +1,329 @@
+{
+  "blueprint": {
+    "components": [
+      {
+        "id": "component-1780567031581-8770-2",
+        "displayName": "API Gateway",
+        "type": "APIManagement.PaaS.APIGateway",
+        "version": "1.0",
+        "description": "APIGateway service",
+        "dependencies": [],
+        "links": [
+          {
+            "componentId": "card-1780567065594-rlxbjsn1x",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1780567046730-1418-3",
+        "displayName": "Container Platform",
+        "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+        "version": "1.0",
+        "description": "Container Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "card-1780567065594-rlxbjsn1x",
+        "displayName": "Order Service",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Order Service component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780567046730-1418-3"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780567130859-s7ysmn83r",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780567148420-r5cospd0d",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "card-1780567077066-hnyujo7uw",
+        "displayName": "Shipping Service",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Shipping Service component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780567046730-1418-3"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780567130859-s7ysmn83r",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780567158578-llcz5u1oq",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780567131317-hr1f6x4xk",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "card-1780567077593-76xkzka0q",
+        "displayName": "Billing Service",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Billing Service component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780567046730-1418-3"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780567130859-s7ysmn83r",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780567148763-7mdlsnpir",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780567131317-hr1f6x4xk",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "card-1780567078055-4lfssq91s",
+        "displayName": "Inventory Service",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Inventory Service component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780567046730-1418-3"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "card-1780567130859-s7ysmn83r",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780567131317-hr1f6x4xk",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          },
+          {
+            "componentId": "card-1780567168639-8hadfcuzz",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1780567046730-1418-3-group-4",
+        "displayName": "Service Mesh security",
+        "type": "Security.CaaS.ServiceMeshSecurity",
+        "version": "1.0",
+        "description": "Service Mesh security component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780567046730-1418-3"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780567046730-1418-3-group-5",
+        "displayName": "Observability Logging",
+        "type": "Observability.CaaS.Logging",
+        "version": "1.0",
+        "description": "Observability Logging component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780567046730-1418-3"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780567046730-1418-3-group-6",
+        "displayName": "Observability Monitoring",
+        "type": "Observability.CaaS.Monitoring",
+        "version": "1.0",
+        "description": "Observability Monitoring component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780567046730-1418-3"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780567046730-1418-3-group-7",
+        "displayName": "Observability Tracing",
+        "type": "Observability.CaaS.Tracing",
+        "version": "1.0",
+        "description": "Observability Tracing component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1780567046730-1418-3"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780567119349-7409-4",
+        "displayName": "Messaging Platform",
+        "type": "Messaging.PaaS.Broker",
+        "version": "1.0",
+        "description": "Messaging Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "card-1780567130859-s7ysmn83r",
+        "displayName": "Orders Topic",
+        "type": "Messaging.PaaS.Entity",
+        "version": "1.0",
+        "description": "Orders Topic component",
+        "dependencies": [
+          {
+            "type": "Messaging.PaaS.Broker",
+            "id": "component-1780567119349-7409-4"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "card-1780567131317-hr1f6x4xk",
+        "displayName": "Dead Letter Queue",
+        "type": "Messaging.PaaS.Entity",
+        "version": "1.0",
+        "description": "Dead Letter Queue component",
+        "dependencies": [
+          {
+            "type": "Messaging.PaaS.Broker",
+            "id": "component-1780567119349-7409-4"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780567140167-8959-5",
+        "displayName": "Relational DBMS Platform",
+        "type": "Storage.PaaS.RelationalDbms",
+        "version": "1.0",
+        "description": "Relational DBMS Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "card-1780567148420-r5cospd0d",
+        "displayName": "Orders Database",
+        "type": "Storage.PaaS.RelationalDatabase",
+        "version": "1.0",
+        "description": "Orders Database component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.RelationalDbms",
+            "id": "component-1780567140167-8959-5"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "card-1780567148763-7mdlsnpir",
+        "displayName": "Billing Database",
+        "type": "Storage.PaaS.RelationalDatabase",
+        "version": "1.0",
+        "description": "Billing Database component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.RelationalDbms",
+            "id": "component-1780567140167-8959-5"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "card-1780567158578-llcz5u1oq",
+        "displayName": "Shipping Database",
+        "type": "Storage.PaaS.RelationalDatabase",
+        "version": "1.0",
+        "description": "Shipping Database component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.RelationalDbms",
+            "id": "component-1780567140167-8959-5"
+          }
+        ],
+        "links": []
+      },
+      {
+        "id": "component-1780567165195-1941-6",
+        "displayName": "Key-Value DBMS Platform",
+        "type": "Storage.PaaS.KeyValueDbms",
+        "version": "1.0",
+        "description": "Key-Value DBMS Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "card-1780567168639-8hadfcuzz",
+        "displayName": "Inventory Cache",
+        "type": "Storage.PaaS.KeyValueEntity",
+        "version": "1.0",
+        "description": "Inventory Cache component",
+        "dependencies": [
+          {
+            "type": "Storage.PaaS.KeyValueDbms",
+            "id": "component-1780567165195-1941-6"
+          }
+        ],
+        "links": []
+      }
+    ]
+  },
+  "canvasLayout": {
+    "nodes": [
+      {
+        "componentId": "component-1780567031581-8770-2",
+        "x": 444.49452392080264,
+        "y": 281.2019526928985
+      },
+      {
+        "componentId": "component-1780567046730-1418-3",
+        "x": 848.3091067522795,
+        "y": 179.29621416924266
+      },
+      {
+        "componentId": "component-1780567119349-7409-4",
+        "x": 1595.9951655048167,
+        "y": 104.13591768761279
+      },
+      {
+        "componentId": "component-1780567140167-8959-5",
+        "x": 1592.1969059985029,
+        "y": 393.14861451289437
+      },
+      {
+        "componentId": "component-1780567165195-1941-6",
+        "x": 1593.6131366172706,
+        "y": 785.8343335033254
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "blueprint": {
+    "components": [
+      {
+        "id": "component-1778514502068-7541-1",
+        "displayName": "API Gateway",
+        "type": "APIManagement.PaaS.APIGateway",
+        "version": "1.0",
+        "description": "APIGateway service",
+        "dependencies": [],
+        "links": [
+          {
+            "componentId": "component-1778514508446-7744-2-group-0",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1778514508446-7744-2",
+        "displayName": "Container Platform",
+        "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+        "version": "1.0",
+        "description": "Container Platform component",
+        "dependencies": [],
+        "links": []
+      },
+      {
+        "id": "component-1778514508446-7744-2-group-0",
+        "displayName": "Custom Workload",
+        "type": "CustomWorkloads.CaaS.Workload",
+        "version": "1.0",
+        "description": "Custom Workload component",
+        "dependencies": [
+          {
+            "type": "NetworkAndCompute.PaaS.ContainerPlatform",
+            "id": "component-1778514508446-7744-2"
+          }
+        ],
+        "links": [
+          {
+            "componentId": "component-1778514577817-2738-4",
+            "settings": "{\"connectionTypes\":[{\"id\":\"connection\",\"name\":\"connection\"}]}"
+          }
+        ]
+      },
+      {
+        "id": "component-1778514577817-2738-4",
+        "displayName": "File & Blob Storage",
+        "type": "Storage.PaaS.FilesAndBlobs",
+        "version": "1.0",
+        "description": "FilesAndBlobs service",
+        "dependencies": [],
+        "links": []
+      }
+    ]
+  },
+  "canvasLayout": {
+    "nodes": [
+      {
+        "componentId": "component-1778514502068-7541-1",
+        "x": 131.57401989467525,
+        "y": 268.6717378583967
+      },
+      {
+        "componentId": "component-1778514508446-7744-2",
+        "x": 640.860152135752,
+        "y": 29.128145114101798
+      },
+      {
+        "componentId": "component-1778514577817-2738-4",
+        "x": 1150.9771796372145,
+        "y": 257.03920421299006
+      }
+    ]
+  }
+}
